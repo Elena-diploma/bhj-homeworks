@@ -1,7 +1,7 @@
 const clicker__counter = document.getElementById('clicker__counter');
 const cookie = document.getElementById('cookie');
 const clickerSpeed = document.getElementById('clicker__speed');
-let lastClickTime = 0;
+let lastClickTime = Date.now();
 let allClickTime = 0;
 let clicks = 0;
 
@@ -12,14 +12,10 @@ function clicker () {
     if(lastClickTime !== 0) {
         const delta = new Date() - lastClickTime;
         allClickTime = allClickTime + delta/1000;
-        clickerSpeed.textContent = (clicks/allClickTime).toFixed(2);
+        clickerSpeed.textContent = (1/allClickTime).toFixed(2);
     }
     lastClickTime  = new Date();
 
-    if(cookie.width === 200) {
-        cookie.width = 150;
-    } else {
-        cookie.width = 200;
-    }
+    cookie.width = clicks % 2 ? 250 : 200;
 }
 
