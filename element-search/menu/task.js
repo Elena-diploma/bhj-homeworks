@@ -6,9 +6,10 @@ menuClick.forEach((el) => el.onclick = function() {
 
     if(currentSubMenu != null && currentSubMenu.classList.contains("menu_active")) {
         currentSubMenu.classList.remove("menu_active");
+
     } else {
         menuMain.forEach((item) => item.classList.remove("menu_active"));
         if(currentSubMenu != null ) currentSubMenu.classList.toggle("menu_active");
+        return false;
     }
-    return false;
 });
