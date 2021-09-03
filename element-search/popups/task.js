@@ -7,7 +7,7 @@ const modalOpen = (element) => {
 }
 
 const modalClose = function modalClose(element) {
-    const close = this.closest(".modal");
+    const close = element.closest(".modal");
     close.classList.remove("modal_active");
 
 };
