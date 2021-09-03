@@ -6,13 +6,13 @@ const modalOpen = (element) => {
     element.classList.add("modal_active")
 }
 
-const modalClose = function modalClose(element) {
+function modalClose(element) {
     const close = element.closest(".modal");
     close.classList.remove("modal_active");
 
 };
 
-for (let item of modalFirst.getElementsByClassName("modal__close")) {
+for (let item of document.getElementsByClassName("modal__close")) {
     item.onclick = function () {
         modalClose(item);
     }
